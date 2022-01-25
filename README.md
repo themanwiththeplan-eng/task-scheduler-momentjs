@@ -18,3 +18,5 @@ for loop)
 ---
 
 ## Screenshot of Deployed Application
+
+![Deployed Application](/assets/images/DeployedApp.JPG)
