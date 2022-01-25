@@ -1,5 +1,8 @@
-var today = new Date().toLocaleDateString();
-var momentToday = moment(today).format("dddd, MMMM Do YYYY");
+
+var momentToday = moment().format("dddd, MMMM Do YYYY");
+
+var hours = Number(moment().format("hh"));
+
 $("#currentDay").text(momentToday);
 
 $("#btn-one").on('click', function(){
@@ -44,3 +47,12 @@ $("#three").val(localStorage.getItem("3PM"));
 $("#four").val(localStorage.getItem("4PM"));
 $("#five").val(localStorage.getItem("5PM"));
 
+$('tr').each(hours, function(index, value){
+    if(Number(value.dataset.hour) > hours){
+        $(this).next().addClass("future");
+    }else if(Number(value.dataset.hour) == hours){
+        $(this).next().addClass("present");
+    }else{
+        $(this).next.addClass("past");
+    }
+})
