@@ -47,12 +47,12 @@ $("#three").val(localStorage.getItem("3PM"));
 $("#four").val(localStorage.getItem("4PM"));
 $("#five").val(localStorage.getItem("5PM"));
 
-$('tr').each(hours, function(index, value){
-    if(Number(value.dataset.hour) > hours){
-        $(this).next().addClass("future");
-    }else if(Number(value.dataset.hour) == hours){
-        $(this).next().addClass("present");
+$('th').each(function(){
+    if(Number($('th').attr("data-time") > hours)){
+        $('tr').next().addClass('future');
+    }else if(Number($('th').attr("data-time") == hours)){
+        $('tr').next().addClass('present');
     }else{
-        $(this).next.addClass("past");
+        $('tr').next().addClass('past');
     }
 })
